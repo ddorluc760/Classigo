@@ -60,8 +60,8 @@ CREATE TABLE clases(
 
 CREATE TABLE horarios(
     id SERIAL,
-    fechaHoraInicio DATETIME NOT NULL,
-    fechaHoraFin DATETIME NOT NULL,
+    fechaHoraInicio TIMESTAMP NOT NULL,
+    fechaHoraFin TIMESTAMP NOT NULL,
     cuposDisponibles NUMERIC(5),
     idClase SERIAL NOT NULL,
     CONSTRAINT pk_idHorario PRIMARY KEY (id),
@@ -128,5 +128,5 @@ CREATE TABLE mensajes(
     idReceptor SERIAL,
     CONSTRAINT pk_idMensajes PRIMARY KEY (id),
     CONSTRAINT fk_idEmisor FOREIGN KEY (idEmisor) REFERENCES usuarios(id),
-    CONSTRAINT fk_idReceptor FOREIGN KEY (idReceptor) REFEREMCES usuarios(id)
+    CONSTRAINT fk_idReceptor FOREIGN KEY (idReceptor) REFERENCES usuarios(id)
 );
